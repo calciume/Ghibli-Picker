@@ -15,4 +15,4 @@
 
 **How to use**
 1. Navigate to the directory with the `cd` command in the terminal.
-2. run `python3 Ghibli_Picker.py`
+2. run `python3 Ghibli-Picker.py`
