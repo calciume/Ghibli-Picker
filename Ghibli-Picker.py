@@ -118,9 +118,10 @@ def option3():
         if overrideinput == "Y" or "y":
             fileexists = os.path.exists("save.json")  # Check if save file exists
             if fileexists is False:
-                open("save.json", "x")  # Make the save file
-            with open("save.json", "w") as json_save:
-                json.dump(MovieDict, json_save)
+                makefile = open("save.json", "x")  # Make the save file
+                makefile.close()
+            with open("save.json", "w") as json_save:  # Open the file for saving
+                json.dump(MovieDict, json_save)  # Dump the dictionary to a .json
                 print("Saved!")
                 sleep(1)
                 break
@@ -139,12 +140,19 @@ def option4():
     while True:
         overrideinput = input("Y/N: ")
         if overrideinput == "Y" or "y":
-            with open("save.json") as json_load:
-                global MovieDict
-                MovieDict = json.load(json_load)
-                print("Loaded save file!")
-                sleep(1)
-                break
+            try:  # Check if a save file exists
+                with open("save.json") as json_load:  # Open the save file for loading
+                    global MovieDict
+                    MovieDict = json.load(json_load)  # Load the .json into the dictionary
+                    print("Loaded save file!")
+                    sleep(1)
+                    break
+            except FileNotFoundError:
+                print("No save file found! Try saving first.")
+                sleep(2)
+                clear()
+                mainmenu()
+
         elif overrideinput == "N" or "n":
             break
         else:
