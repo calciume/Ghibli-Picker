@@ -1,5 +1,4 @@
-## Ghibli Picker
-#### by calciume
+## Ghibli Picker  by calciume
 
 **Features**
 - Pick a Studio Ghibli movie at random
