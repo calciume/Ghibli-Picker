@@ -33,7 +33,8 @@ MovieDict = {
     '18': "Grave of the Fireflies",
     '19': "My Neighbor Totoro",
     '20': "Castle in the Sky",
-    '21': "Nausicaä of the Valley of the Wind"
+    '21': "Nausicaä of the Valley of the Wind",
+    '22': "The Boy and the Heron"
 }
 
 
